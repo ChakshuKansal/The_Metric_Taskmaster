@@ -1,146 +1,143 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.mainsection{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-}
-.container{
-    background-color: rgb(135, 53, 53);
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    height: 500px;
-    width: 800px;
-    overflow: hidden;
-    border-radius: 30px;
-    display: flex;
-    box-shadow: 5px 15px 40px;
-}
-.icons{
-
-    display: flex;
-    justify-content: space-between;
-    width: 30%;
-    align-content: center;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-}
-.icon{
-    padding: 10px;
-}
-.icon:hover{
-    background-color: rgb(202, 118, 118);
-
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
-.signin{
-    text-align: center;
-    justify-items: center;
-    width: 50%;
-    background-color: aliceblue;
-    position: absolute;
-    height: 100%;
-    align-content: center;
-    transition: all 500ms;
+.mainsection {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
 }
-.signup{
-    text-align: center;
-    justify-items: center;
-    width: 50%;
-    background-color: rgb(255, 0, 0);
-    /* position: absolute; */
-    height: 100%;
-    align-content: center;
-    margin-left: 50%;
-    justify-self: flex-end;
-    color: white;
-    transition: all 500ms;
+.container {
+  background-color: rgb(135, 53, 53);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 500px;
+  width: 800px;
+  overflow: hidden;
+  border-radius: 30px;
+  display: flex;
+  box-shadow: 5px 15px 40px;
 }
-
-.inputter{
-    background-color:rgb(199, 199, 199);
-    border-radius: 5px;
-    padding-left:10px ;
-    padding-right: 10px;
-    padding: 5px;
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  align-content: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
 }
-
-.btn1{
-    background-color: red;
-    border-radius: 30px;
-    border:none;
-    cursor: pointer;
+.icon {
+  padding: 10px;
 }
-.btn1:hover{
-    box-shadow: 2px 5px 10px;
+.icon:hover {
+  background-color: rgb(202, 118, 118);
 }
 
-.signinbtn{
-    background-color: red;
-    height: 35px;
-    width: 120px;
-    align-content: center;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    color: white;
-    font-size: small;
+.signin {
+  text-align: center;
+  justify-items: center;
+  width: 50%;
+  background-color: aliceblue;
+  position: absolute;
+  height: 100%;
+  align-content: center;
+  transition: all 500ms;
 }
-.cont{
-    width: 80%;
-    align-self: center;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%,-0%);
-}
-
-.signupbtn{
-    border: rgb(255, 255, 255) 2px solid;
-    color: white;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 35px;
-    width: 120px;
-    align-content: center;
-    position: relative;
+.signup {
+  text-align: center;
+  justify-items: center;
+  width: 50%;
+  background-color: rgb(255, 0, 0);
+  /* position: absolute; */
+  height: 100%;
+  align-content: center;
+  margin-left: 50%;
+  justify-self: flex-end;
+  color: white;
+  transition: all 500ms;
 }
 
-.btnholder{
-    border: rgb(255, 255, 255) 2px solid;
-    color: white;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 35px;
-    width: 120px;
-    align-content: center;
-    position: relative;
-}
-#signinbtn{
-    display: none;
+.inputter {
+  background-color: rgb(199, 199, 199);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 5px;
 }
 
-.SI{
-    display: block;
-    transition: all 700ms;
+.btn1 {
+  background-color: red;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
 }
-.SU{
-    display: none;
-    transition: all 700ms;
+.btn1:hover {
+  box-shadow: 2px 5px 10px;
 }
 
-#cont1{
-    display: none;
+.signinbtn {
+  background-color: red;
+  height: 35px;
+  width: 120px;
+  align-content: center;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  font-size: small;
+}
+.cont {
+  width: 80%;
+  align-self: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -0%);
+}
+
+.signupbtn {
+  border: rgb(255, 255, 255) 2px solid;
+  color: white;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 35px;
+  width: 120px;
+  align-content: center;
+  position: relative;
+}
+
+.btnholder {
+  border: rgb(255, 255, 255) 2px solid;
+  color: white;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 35px;
+  width: 120px;
+  align-content: center;
+  position: relative;
+}
+#signinbtn {
+  display: none;
+}
+
+.SI {
+  display: block;
+  transition: all 700ms;
+}
+.SU {
+  display: none;
+  transition: all 700ms;
+}
+
+#cont1 {
+  display: none;
 }

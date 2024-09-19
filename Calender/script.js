@@ -36,6 +36,7 @@ const months = [
   "November",
   "December",
 ];
+console.log("HELLLO");
 
 const eventsArr = [];
 getEvents();
@@ -100,6 +101,8 @@ function initCalendar() {
   addListner();
 }
 
+initCalendar();
+
 //function to add month and year on prev and next button
 function prevMonth() {
   month--;
@@ -121,8 +124,6 @@ function nextMonth() {
 
 prev.addEventListener("click", prevMonth);
 next.addEventListener("click", nextMonth);
-
-initCalendar();
 
 //function to add active on day
 function addListner() {
@@ -269,6 +270,11 @@ document.addEventListener("click", (e) => {
 addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
+
+function goBack(){
+  // window.open('../Main/index.html', '_blank');
+  window.history.back();
+}
 
 
 
