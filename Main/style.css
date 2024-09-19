@@ -11,6 +11,7 @@
 
 body {
   font-family: myfont;
+  overflow: hidden;
 }
 
 .main {
@@ -138,6 +139,10 @@ body {
   justify-content: space-between;
   display: flex;
   width: 410px;
+  flex-wrap: wrap;
+  float: right;
+  width: 100%;
+  align-items: flex-end;
 }
 
 .searchbox {
@@ -150,12 +155,12 @@ body {
   width: 250px;
   gap: 10px;
   border-radius: 10px;
+  float: right;
 }
 
 .sb {
   border-radius: 10px;
   border: none;
-  /* background-color: #B197FC; */
   background-color: rgb(199, 199, 199);
   height: 40px;
   width: 250px;
@@ -176,12 +181,13 @@ body {
   display: grid;
   width: 100%;
   height: 100px;
+  margin-top: 50px;
 }
 
 .div1 {
   background-color: rgb(127, 50, 243);
-  height: 200px;
-  width: 26%;
+  height: 250px;
+  width: 340px;
   border-radius: 20px;
   justify-content: space-evenly;
   display: flex;
@@ -238,6 +244,7 @@ body {
   float: right;
   width: 30%;
   gap: 10px;
+  border-radius: 30px;
 }
 #usersList {
   /* height: 100px; */
@@ -249,10 +256,84 @@ body {
   border: 2px solid;
   padding: 7px;
   justify-content: space-between;
+  border-radius: 30px;
 }
 .user-item {
-  text-align: center;
+  /* text-align: center; */
   height: 40px;
   align-items: center;
   width: 100%;
+  /* background-color: red; */
+  margin-top: 10px;
+}
+
+#headinput {
+  background-color: #c2b5e9;
+  color: black;
+  height: 40px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  transition: all 400ms ease-in-out;
+  font-size: 20px;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+  align-items: center;
+  align-content: center;
+}
+#Xmark {
+  margin-left: 93%;
+  line-height: 25px;
+  width: 25px;
+  align-content: center;
+}
+
+#taskinputbox {
+  background-color: #c2b5e9;
+  color: black;
+  height: 120px;
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  transition: all 400ms ease-in-out;
+  font-size: 20px;
+  justify-content: flex-start;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#taskinput {
+  background-color: #664e78;
+  height: 250px;
+  width: 20%;
+  flex-wrap: wrap;
+  display: flex;
+  position: absolute;
+  right: -100%;
+  transition: all 400ms ease-in-out;
+  font-size: 30px;
+  display: grid;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 30px;
+}
+
+.subbtn {
+  background: transparent;
+  border: 2px solid;
+  padding: 5px;
+  width: 50%;
+  /* transform: translate(100%,0%); */
+}
+.subbutn {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  width: 100%;
+}
+
+.subbtn:hover {
+  background-color: #604871;
 }
