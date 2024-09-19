@@ -16,7 +16,6 @@ body{
 .main{
     display: flex;
     background-color: #0B1729;
-    ;
 }
 
 .mainicon{
@@ -28,6 +27,11 @@ body{
     height: 100vh;
     padding-left: 10px;
     color: white;
+    position: fixed;
+
+    z-index: 7;
+    width: 190px;
+    overflow: hidden;
 
 }
 .mainmenu{
@@ -39,6 +43,9 @@ body{
     background-color: white;
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    z-index: 5;
+    margin-left: 196px; /* Leave space for the sidebar */
+    padding: 20px;
 }
 .logoholder{
     height: 80px;
@@ -74,18 +81,18 @@ body{
     align-items: center;
     justify-content: flex-start;
     gap: 15px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     width:100px;
     
 }
 .pgsection{
     height: 350px;
     margin-top: 100px;
-
 }
 .pgsec{
-    justify-content: flex-start;
-    display: grid;
+    /* justify-content: flex-start; */
+    /* display: grid; */
+    width: 180px;
 
 }
 .leftmenulogout{
@@ -102,11 +109,18 @@ body{
 .btn{
     background-color: #0B1729;
     border: none;
+    width: 100%;
     color: rgb(223, 222, 222);
     cursor: pointer;
     height: 40px;
     padding-left: 10px;
     padding-right: 10px;   
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+}
+.btn:hover{
+    background-color: #664e78;
 }
 .btn2{
     background-color: #B197FC;
@@ -159,4 +173,95 @@ body{
     background-color: #B197FC;
     border-radius: 10px;
     font-size: 15px;
+}
+
+
+
+
+/* DASHBOARD*********************************************************************** */
+
+.analytics{
+    display: grid;
+    width: 100%;
+    height: 100px;
+}
+
+.div1{
+    background-color: rgb(127, 50, 243);
+    height: 200px;
+    width:26%;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-content: space-between;
+    color: white;
+}
+.minitabs{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.minitab{
+    border-radius: 20px;
+    background-color: #664e78;
+    width: 32%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top:8px ;
+    align-items: center;
+}
+.div1 .header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.div1 .tasks{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.status{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: 80px;
+}
+.icons{
+    display: flex;
+    justify-content: center;
+}
+.assigned{
+    float: right;
+    width: 30%;
+    gap: 10px;
+}
+#usersList{
+    /* height: 100px; */
+    justify-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 2px solid;
+    padding: 7px;
+    justify-content: space-between;
+}
+.user-item{
+    text-align: center;
+    height: 40px;
+    align-items: center;
+    width: 100%;
 }

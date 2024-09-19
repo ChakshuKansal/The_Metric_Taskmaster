@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/2157bb5ac9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="mainsection">
+      <div class="container">
+        <div class="signin" id="signin">
+          <div class="SI" id="SI">
+            <h1>Sign in</h1>
+            <br />
+            <div class="icons">
+              <div class="icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-brands fa-google-plus-g"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+            </div>
+            <br />
+            or use your own account<br/>
+            <br>
+            <form  onsubmit="login(); return false;">
+
+              <div class="inputsec">
+                <input class="inputter" id="loginUsername" type="name" placeholder="UserName" required />
+              </div>
+              <br />
+              <div class="inputsec">
+                <input class="inputter" id="loginPassword" type="password" placeholder="Password" required />
+              </div>
+              <br />
+              <button type="submit" class="btn1">
+                <div class="signinbtn">SIGN IN</div>
+              </button>
+            </form>
+          </div>
+          <div class="SU" id="SU">
+            <h1>Create Account</h1>
+            <br />
+            <div class="icons">
+              <div class="icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-brands fa-google-plus-g"></i>
+              </div>
+              <div class="icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+            </div>
+            <br />
+            or use your email for registration<br />
+            <br>
+            <form onsubmit="signUp(); return false;">
+              <div class="inputsec">
+                <input class="inputter" id="signupUsername" type="name" placeholder="UserName" required/>
+              </div>
+              <br />
+              <div class="inputsec">
+                <input class="inputter" id="signupEmail" type="email" placeholder="Email" required />
+              </div>
+              <br />
+              <div class="inputsec">
+                <input class="inputter" id="signupPassword" type="password" placeholder="Password" required/>
+              </div>
+              <br />
+              <button type="submit" class="btn1">
+                <div class="signinbtn">SIGN UP</div>
+              </button>
+            </form>
+            
+
+          </div>
+        </div>
+        <div class="signup" id="signup">
+          <div class="cont" id="cont1">
+            <h1>Welcome Back!</h1>
+            <br />
+            <p>Back to Business – Sign In to Stay on Track</p>
+
+            <br />
+            <button class="btn1" id="btn1" onclick="transform1()">
+              <div class="btnholder" id="signupbtn">SIGN UP</div>
+              <div class="btnholder" id="signinbtn">SIGN IN</div>
+            </button>
+          </div>
+          <div class="cont" id="cont2">
+            <h1>Hello, Friend!</h1>
+            <br />
+            <p>Unlock Your Potential – Join Us Now.</p>
+
+            <br />
+            <button class="btn1" id="btn1" onclick="transform1()">
+              <div class="btnholder" id="signupbtn">SIGN UP</div>
+              <div class="btnholder" id="signinbtn">SIGN IN</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>

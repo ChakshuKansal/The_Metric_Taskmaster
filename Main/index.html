@@ -16,10 +16,10 @@
                 <div class="leftphoto"></div>
                 <div class="info">
                     <div>
-                        <h3>Adelina Eva</h3>
+                        <h3><span style="font-size: 5px;font: 100;" id="usernameDisplay"></span></h3>
                     </div>
                     <div>
-                        Premium Account
+                        <p style="font-size: 1px;font: italic;">Premium Account</p>
                     </div>
 
                 </div>
@@ -34,13 +34,13 @@
                 <div style="display: flex; justify-content: space-between; padding-left: 5px;padding-right: 10px;align-items: center;margin-bottom: 20px;"><span style="font-size: 20px;">Pages</span><i class="fa-solid fa-chevron-up fa-xl" style="color: #B197FC;"></i></div>
                 <div class="pgsec">
 
-                    <button class="btn">
+                    <button  onclick="loadPage('../Dashboard/dashboard.html') ;" class="btn">
                         <div class="leftprofile"><i class="fa-solid fa-grip fa-2xl" style="color: #B197FC;"></i><div>Dashboard</div></div>
                     </button>
-                    <button class="btn">
+                    <button onclick="loadPage('../Tasks/tasks.html')" class="btn">
                         <div class="leftprofile"><i class="fa-solid fa-list-check fa-xl" style="color: #B197FC;"></i></i><div>Tasks</div></div>
                     </button>
-                    <button class="btn">
+                    <button onclick="loadPage('../Calendar/calendar.html')" class="btn">
                         <div class="leftprofile"><i class="fa-regular fa-calendar-days fa-2xl" style="color: #B197FC;"></i><div>Calender</div></div>
                     </button>
                 </div>
@@ -48,13 +48,13 @@
             </div>
 
 
-            <button class="btn">
+            <button class="btn" onclick="logout()">
                 <div class="leftprofile">
                         <i class="fa-solid fa-2xl fa-arrow-right-from-bracket" style="color: #B197FC;"></i><div>Log Out</div>
                 </div>
             </button>
         </div>
-        <div class="mainmenu">
+        <div class="mainmenu" id="main-content">
             <div class="header">
                 <div><h2>Team Task</h2></div>
                 <div class="sbct">
@@ -66,6 +66,7 @@
                 
         </div>
     </div>
+    <script src="script.js"></script>
 
 </body>
 </html>
