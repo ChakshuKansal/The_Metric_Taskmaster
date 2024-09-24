@@ -79,6 +79,30 @@
         </button>
       </div>
       <div class="mainmenu" id="main-content">
+
+        <div id="taskinput">
+          <div id="Xmark">
+            <i class="fa-solid fa-xmark fa-sm" style="color: #b197fc"></i>
+          </div>
+          <div>
+            <textarea type="text"
+            placeholder="Your Task"
+            id="headinput"></textarea>
+          </div>
+          <div>
+            <textarea
+              type="text"
+              placeholder="Description"
+              id="taskinputbox"
+            ></textarea>
+          </div>
+          <div class="subbutn">
+          <button class="subbtn" onclick="submitdata()" type="submit">
+            Submit
+          </button>
+        </div>
+
+        </div>
         <div class="header">
           <div class="sbct">
             <div class="searchbox">
@@ -95,11 +119,10 @@
             </button>
           </div>
         </div>
-
         <div class="analytics">
-          <h2>Analytics</h2>
-          <br />
           <div class="div1">
+            <h2>Analytics</h2>
+            <br/>
             <div class="header">
               <div>Overall Information</div>
               <div>
@@ -141,33 +164,32 @@
               </div>
             </div>
           </div>
+
+          <div class="clock-cont">
+            <div class="clock">
+              <span id="hrs">00</span>
+              <span>:</span>
+              <span id="mins">00</span>
+              <span>:</span>
+              <span id="secs">00</span>
+            </div>
+
+          </div>
+
+
         </div>
-        <div id="taskinput">
-          <div id="Xmark">
-            <i class="fa-solid fa-xmark fa-sm" style="color: #b197fc"></i>
+        <div class="tasks-cont">
+          <div id="task-details" style="display: none;">
+            <h2 style="color: black;">Task</h2>
           </div>
-          <div>
-            <textarea
-              type="text"
-              placeholder="Your Task"
-              id="headinput"
-            ></textarea>
-          </div>
-          <div>
-            <textarea
-              type="text"
-              placeholder="Description"
-              id="taskinputbox"
-            ></textarea>
-          </div>
-          <div class="subbutn">
-            <button class="subbtn" onclick="submitdata()" type="submit">
-              Submit
-            </button>
+          <div id="task-dashboard">
+            <!-- Tasks will be dynamically inserted here -->
           </div>
         </div>
+       
       </div>
     </div>
+    
     <script src="script.js"></script>
   </body>
 </html>

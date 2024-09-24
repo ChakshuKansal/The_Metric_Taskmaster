@@ -11,7 +11,7 @@
 
 body {
   font-family: myfont;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .main {
@@ -35,17 +35,17 @@ body {
   overflow: hidden;
 }
 .mainmenu {
-  height: 100vh;
   width: 96vw;
   color: black;
   padding: 20px;
-  /* background-color: rgb(194, 132, 132); */
   background-color: white;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   z-index: 5;
   margin-left: 196px; /* Leave space for the sidebar */
   padding: 20px;
+  height: 100vh;
+
 }
 .logoholder {
   height: 80px;
@@ -178,10 +178,9 @@ body {
 /* DASHBOARD*********************************************************************** */
 
 .analytics {
-  display: grid;
-  width: 100%;
-  height: 100px;
   margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .div1 {
@@ -289,6 +288,14 @@ body {
   align-content: center;
 }
 
+.tasks-cont{
+  border: 2px solid;
+  height: max-content;
+  background-color: #956a6a;
+  text-align: center;
+  border-radius: 20px;
+}
+
 #taskinputbox {
   background-color: #c2b5e9;
   color: black;
@@ -336,4 +343,102 @@ body {
 
 .subbtn:hover {
   background-color: #604871;
+}
+
+/* tasks boxes ***************************************************** */
+
+#task-dashboard{
+  width: 280px;
+  padding: 20px;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+}
+
+.task-box {
+  padding: 10px;
+  margin: 10px;
+  height: max-content;
+  width: 200px;
+  text-align: center;
+  background-color: #d0acac;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+#task-details {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  width: 90%;
+}
+
+
+/* clock *********************************************** */
+
+.clock-cont{
+  width: 350px;
+  height: 120px;
+  /* background-color: red; */
+  position: relative;
+}
+
+.clock{
+  width: 100%;
+  height: 100%;
+  background: rgba(235,0,255,0.11);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur;
+}
+
+.clock-cont::before{
+  content: ' ';
+  width:40px;
+  height: 40px;
+  background: #f41b75;
+  border-radius: 5px;
+  position: absolute;
+  left: -5px;
+  top: -5px;
+}
+.clock-cont::after{
+  content: '';
+  width:40px;
+  height: 40px;
+  background: #419aff;
+  border-radius: 30px;
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+}
+
+.clock span{
+  font-size: 10px;
+  width: 60px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin-top: 5px;
+}
+
+.clock span::after{
+  position: absolute;
+  font-size: 5px;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#hrs::after{
+  content: 'HOURS';
+}
+#mins::after{
+  content: 'MINS';
+}
+#secs::after{
+  content: 'SEC';
 }
