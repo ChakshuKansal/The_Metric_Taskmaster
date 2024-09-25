@@ -180,6 +180,25 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.dropdown-content {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
 
 .div1 {
   background-color: rgb(127, 50, 243);
@@ -194,12 +213,20 @@ body {
   padding-right: 20px;
   align-content: space-between;
   color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
 }
 .minitabs {
   width: 100%;
   height: max-content;
   display: flex;
   justify-content: space-between;
+}
+/* Hover effect */
+.minitab:hover {
+  background-color: #e0f7fa;
+  border-radius: 10px;
+  color: black;
+  transition: background-color 0.3s ease;
 }
 
 .minitab {
@@ -213,6 +240,11 @@ body {
   padding-left: 7px;
   padding-right: 7px;
   padding-top: 8px;
+  align-items: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 .div1 .header {
@@ -286,7 +318,7 @@ body {
   border: 2px solid;
   height: max-content;
   text-align: center;
-  display: flex;
+  display: none;
   justify-content: space-between;
   padding-left: 30px;
   padding-right: 130px;
@@ -367,12 +399,22 @@ body {
   border-radius: 2px;
 }
 
+.task-desc{
+  width: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
 #task-details {
   padding: 10px;
   margin: 10px;
+  min-height: max-content;
+  max-width: 200px;
   border: 1px solid #ddd;
   background-color: #fff;
-  /* width: 90%; */
+  width: 70%;
+  max-height: fit-content;
 }
 
 .delete-btn{
@@ -380,12 +422,19 @@ body {
 }
 
 
+.functionalapps{
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 /* clock *********************************************** */
 
 .clock-cont{
   width: 350px;
-  height: 120px;
+  height: 100px;
   position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
 }
 
 .clock{
@@ -406,8 +455,8 @@ body {
   background: #f41b75;
   border-radius: 5px;
   position: absolute;
-  left: -5px;
-  top: -5px;
+  left: -10px;
+  top: -10px;
 }
 .clock-cont::after{
   content: '';
@@ -416,8 +465,8 @@ body {
   background: #419aff;
   border-radius: 30px;
   position: absolute;
-  bottom: -5px;
-  right: -5px;
+  bottom: -10px;
+  right: -10px;
 }
 
 .clock span{
@@ -445,4 +494,93 @@ body {
 }
 #secs::after{
   content: 'SEC';
+}
+
+
+
+/* Weather /////////////////////////////// */
+
+
+/* body {
+  font-family: 'montserrat', sans-serif;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: top center;
+} */
+
+.app-wrap {
+  display: flex;
+  flex-direction: column;
+  color: black;
+  background-image: linear-gradient(to bottom, rgba(225, 42, 42, 0.3), rgba(100, 22, 22, 0.3));
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px 10px;
+}
+
+header input {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-bottom: 3px solid gray;
+  color: #292424;
+  font-size: 15px;
+  font-weight: 100;
+  transition: 0.2s ease-out;
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+  flex: 1 1 100%;
+  padding: 15px 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.location .city {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.location .date {
+  font-size: 16px;
+}
+
+.current .temp {
+  font-size: 32px;
+  font-weight: 900;
+  margin: 30px 0px;
+}
+
+.current .temp span {
+  font-weight: 300;
+}
+
+.current .weather {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 15px;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.current .hi-low {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
 }

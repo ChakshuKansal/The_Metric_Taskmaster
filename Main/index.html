@@ -97,17 +97,26 @@
         <div class="analytics">
           <div class="div1">
             <h2>Analytics</h2>
-            <br/>
+            <br />
             <div class="header">
               <div>Overall Information</div>
               <div>
-                <i class="fa-solid fa-share-nodes"></i>
+                <button onclick="shareAnalytics()" style="background: transparent; border: none; color:white ;">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
               </div>
-              <div><i class="fa-solid fa-ellipsis-vertical"></i><br /></div>
+              <div>
+                <button onclick="toggleDropdown()" style="background: transparent; border: none; color: white;">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+                </button>
+                <div id="dropdown" class="dropdown-content" style="display: none;">
+                  <a href="#" onclick="shareAnalytics()">Export Data</a>
+                  <a href="#" onclick="resetAnalytics()">Reset Analytics</a>
+                </div>
+              </div>
             </div>
             <div class="tasks">
-              <div><span style="font-size: 40px">43</span> tasks done</div>
-              <div><span style="font-size: 40px">2</span> projects stopped</div>
+              <div><span id="tasks-done" style="font-size: 40px">0</span> tasks done</div>
             </div>
             <div class="minitabs">
               <div class="minitab">
@@ -115,7 +124,7 @@
                   <i class="fa-regular fa-circle-dot"></i>
                 </div>
                 <div class="status">
-                  <div style="font-size: 25px; text-align: center">28</div>
+                  <div id="projects-total" style="font-size: 25px; text-align: center">0</div>
                   <div>Projects</div>
                 </div>
               </div>
@@ -124,7 +133,7 @@
                   <i class="fa-solid fa-circle-notch"></i>
                 </div>
                 <div class="status">
-                  <div style="font-size: 25px; text-align: center">14</div>
+                  <div id="projects-in-progress" style="font-size: 25px; text-align: center">0</div>
                   <div>In Progress</div>
                 </div>
               </div>
@@ -133,7 +142,7 @@
                   <i class="fa-solid fa-circle"></i>
                 </div>
                 <div class="status">
-                  <div style="font-size: 25px; text-align: center">11</div>
+                  <div id="projects-completed" style="font-size: 25px; text-align: center">0</div>
                   <div>Completed</div>
                 </div>
               </div>
@@ -159,7 +168,9 @@
           </div>
 
         </div>
+        <div class="functionalapps">
 
+          
           <div class="clock-cont">
             <div class="clock">
               <span id="hrs">00</span>
@@ -170,17 +181,33 @@
             </div>
 
           </div>
+          <div class="app-wrap">
+            <header>
+              <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
+            </header>
+            <main>
+              <section class="location">
+                <div class="city">New York, US</div>
+                <div class="date">Wednesday 22 July 2020</div>
+              </section>
+              <div class="current">
+                <div class="temp">15<span>°c</span></div>
+                <div class="weather">Sunny</div>
+                <div class="hi-low">13°c / 16°c</div>
+              </div>
+            </main>
+          </div>
+        </div>
 
 
         </div>
-        <div class="tasks-cont">
+        <div id="tasks-cont" class="tasks-cont">
           <div id="task-dashboard">
+            <h1>Tasks</h1>
             <!-- Tasks will be dynamically inserted here -->
           </div>
           <div id="task-details" style="display: none;">
-            <h2 style="color: black;">Task</h2>
           </div>
-        
         </div>
        
       </div>
