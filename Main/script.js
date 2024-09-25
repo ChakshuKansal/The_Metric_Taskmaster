@@ -23,35 +23,80 @@ let createtask = document.getElementById("createtask");
 let taskinput = document.getElementById("taskinput");
 let xmark = document.getElementById("Xmark");
 
-
 // Function to display tasks on the dashboard
 function displayTasks() {
-
   // Get the logged-in user
   const currentUser = localStorage.getItem("currentUser");
-
-    // Check if the user is logged in
-    if (!currentUser) {
-      alert("No user is logged in.");
-      return;
-    }
-
+  // Check if the user is logged in
+  if (!currentUser) {
+    alert("No user is logged in.");
+    return;
+  }
   // Get the user's data from localStorage (including password, email, and tasks)
   const userData = JSON.parse(localStorage.getItem(currentUser));
-
- // Check if user has any tasks, if not, initialize an empty array
-   tasks = userData.tasks || [];
-
+  // Check if user has any tasks, if not, initialize an empty array
+  let tasks = userData.tasks || [];
   const dashboard = document.getElementById('task-dashboard');
   dashboard.innerHTML = ''; // Clear any existing tasks
 
-  tasks.forEach(task => {
-      const taskBox = document.createElement('div');
-      taskBox.classList.add('task-box');
-      taskBox.innerText = task.title;
-      taskBox.addEventListener('click', () => openTask(task.id));
-      dashboard.appendChild(taskBox);
+  tasks.forEach((task, index) => {
+    const taskBox = document.createElement('div');
+    taskBox.classList.add('task-box');
+    const radioButton = document.createElement('input');
+    radioButton.type = 'radio';
+    radioButton.name = 'task-completed';
+    radioButton.checked = task.completed;
+    radioButton.addEventListener('click', () => markTaskAsCompleted(index)); //Event to mark task completed
+    const taskLabel = document.createElement('span');
+    taskLabel.innerText = task.title;
+    taskLabel.style.textDecoration = task.completed ? 'line-through' : 'none'; //Strike-through if completed
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete-btn');
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash fa-xl" style="color: #74C0FC;"></i>';
+    deleteButton.classList.add('delete-btn');
+    deleteButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevent triggering other events (like opening the task)
+      deleteTask(index);
+    });
+
+    taskBox.appendChild(radioButton);
+    taskBox.appendChild(taskLabel);  
+    taskBox.appendChild(deleteButton); 
+    taskBox.addEventListener('click', () => openTask(task.id));
+    dashboard.appendChild(taskBox);
   });
+}
+
+function deleteTask(taskIndex) {
+  const currentUser = localStorage.getItem("currentUser");
+
+  if (!currentUser) {
+    alert("No user is logged in.");
+    return;
+  }
+
+  const userData = JSON.parse(localStorage.getItem(currentUser));
+  let tasks = userData.tasks || [];
+  tasks.splice(taskIndex, 1);
+  localStorage.setItem(currentUser, JSON.stringify(userData));
+  displayTasks();
+}
+
+//Function to mark a task as completed**
+function markTaskAsCompleted(taskIndex) {
+  const currentUser = localStorage.getItem("currentUser");
+
+  if (!currentUser) {
+    alert("No user is logged in.");
+    return;
+  }
+
+  const userData = JSON.parse(localStorage.getItem(currentUser));
+  let tasks = userData.tasks || [];
+  tasks[taskIndex].completed = !tasks[taskIndex].completed;
+  localStorage.setItem(currentUser, JSON.stringify(userData));
+
+  displayTasks();
 }
 
 
@@ -81,12 +126,8 @@ function submitdata() {
     description: desc
   };
 
-    // Add the new task to the task array
     userData.tasks.push(newTask);
-    // Save the updated task list back to localStorage
     localStorage.setItem(currentUser, JSON.stringify(userData));
-  
-    // Clear input fields after submission
     document.getElementById("headinput").value = '';
     document.getElementById("taskinputbox").value = '';
 
@@ -118,14 +159,12 @@ function openTask(taskId) {
 }
 
 createtask.addEventListener("click", () => {
-  taskinput.style.right = 0;
+  taskinput.style.display = "grid";
 });
 
 xmark.addEventListener("click", () => {
-  taskinput.style.right = "-20%";
+  taskinput.style.display = "none";
 });
-
-
 
 
 // ************************************************************************Clock
@@ -133,7 +172,6 @@ xmark.addEventListener("click", () => {
 let hrs=document.getElementById("hrs");
 let mins=document.getElementById("mins");
 let secs=document.getElementById("secs");
-
 
 
 setInterval(()=>{

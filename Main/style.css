@@ -37,6 +37,7 @@ body {
 .mainmenu {
   width: 96vw;
   color: black;
+  min-height: 100vh;
   padding: 20px;
   background-color: white;
   border-top-left-radius: 50px;
@@ -44,7 +45,7 @@ body {
   z-index: 5;
   margin-left: 196px; /* Leave space for the sidebar */
   padding: 20px;
-  height: 100vh;
+  height: max-content;
 
 }
 .logoholder {
@@ -80,7 +81,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   gap: 15px;
-  /* margin-top: 20px; */
   width: 100px;
 }
 .pgsection {
@@ -88,8 +88,6 @@ body {
   margin-top: 100px;
 }
 .pgsec {
-  /* justify-content: flex-start; */
-  /* display: grid; */
   width: 180px;
 }
 .leftmenulogout {
@@ -246,7 +244,6 @@ body {
   border-radius: 30px;
 }
 #usersList {
-  /* height: 100px; */
   justify-items: center;
   align-items: center;
   display: flex;
@@ -258,11 +255,9 @@ body {
   border-radius: 30px;
 }
 .user-item {
-  /* text-align: center; */
   height: 40px;
   align-items: center;
   width: 100%;
-  /* background-color: red; */
   margin-top: 10px;
 }
 
@@ -270,19 +265,18 @@ body {
   background-color: #c2b5e9;
   color: black;
   height: 40px;
+  overflow-y: hidden;
   width: 100%;
-  flex-wrap: wrap;
-  display: flex;
   transition: all 400ms ease-in-out;
   font-size: 20px;
-  justify-content: flex-start;
   padding: 10px;
   border-radius: 10px;
   align-items: center;
   align-content: center;
+  border: 1px solid black;
 }
 #Xmark {
-  margin-left: 93%;
+  margin-left: 100%;
   line-height: 25px;
   width: 25px;
   align-content: center;
@@ -291,9 +285,13 @@ body {
 .tasks-cont{
   border: 2px solid;
   height: max-content;
-  background-color: #956a6a;
   text-align: center;
-  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 130px;
+  border-radius: 10px;
+  margin-top: 50px;
 }
 
 #taskinputbox {
@@ -302,29 +300,30 @@ body {
   height: 120px;
   width: 100%;
   flex-wrap: wrap;
+  overflow-y: hidden;
   display: flex;
   transition: all 400ms ease-in-out;
   font-size: 20px;
   justify-content: flex-start;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid black;
 }
 
 #taskinput {
-  background-color: #664e78;
+  background-color: #a88ac0;
   height: 250px;
-  width: 20%;
   flex-wrap: wrap;
-  display: flex;
-  position: absolute;
-  right: -100%;
+  display: none;
   transition: all 400ms ease-in-out;
   font-size: 30px;
-  display: grid;
-  justify-content: center;
+  justify-content: space-between;
+  align-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 30px;
+  padding-top: 10px;
+  border: 2px solid black;
 }
 
 .subbtn {
@@ -332,7 +331,6 @@ body {
   border: 2px solid;
   padding: 5px;
   width: 50%;
-  /* transform: translate(100%,0%); */
 }
 .subbutn {
   display: flex;
@@ -360,10 +358,13 @@ body {
   height: max-content;
   width: 200px;
   text-align: center;
-  background-color: #d0acac;
-  border: 1px solid #ddd;
+  /* background-color: #d0acac; */
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000000;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 2px;
 }
 
 #task-details {
@@ -371,7 +372,11 @@ body {
   margin: 10px;
   border: 1px solid #ddd;
   background-color: #fff;
-  width: 90%;
+  /* width: 90%; */
+}
+
+.delete-btn{
+  padding: 5px;
 }
 
 
@@ -380,7 +385,6 @@ body {
 .clock-cont{
   width: 350px;
   height: 120px;
-  /* background-color: red; */
   position: relative;
 }
 

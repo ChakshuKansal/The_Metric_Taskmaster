@@ -53,9 +53,6 @@
             ><i class="fa-solid fa-chevron-up fa-xl" style="color: #b197fc"></i>
           </div>
           <div class="pgsec">
-            <!-- <button  onclick="loadPage('../Dashboard/dashboard.html') ;" class="btn">
-                        <div class="leftprofile"><i class="fa-solid fa-grip fa-2xl" style="color: #B197FC;"></i><div>Dashboard</div></div>
-                    </button> -->
             <button onclick="openCalender()" class="btn">
               <div class="leftprofile">
                 <i
@@ -80,29 +77,7 @@
       </div>
       <div class="mainmenu" id="main-content">
 
-        <div id="taskinput">
-          <div id="Xmark">
-            <i class="fa-solid fa-xmark fa-sm" style="color: #b197fc"></i>
-          </div>
-          <div>
-            <textarea type="text"
-            placeholder="Your Task"
-            id="headinput"></textarea>
-          </div>
-          <div>
-            <textarea
-              type="text"
-              placeholder="Description"
-              id="taskinputbox"
-            ></textarea>
-          </div>
-          <div class="subbutn">
-          <button class="subbtn" onclick="submitdata()" type="submit">
-            Submit
-          </button>
-        </div>
 
-        </div>
         <div class="header">
           <div class="sbct">
             <div class="searchbox">
@@ -165,6 +140,26 @@
             </div>
           </div>
 
+          
+        <div id="taskinput">
+
+          <div id="Xmark">
+            <i class="fa-solid fa-xmark fa-sm" style="color: #a00aeb"></i>
+          </div>
+          <div >
+            <textarea type="text" placeholder="Your Task" id="headinput"></textarea>
+          </div>
+          <div>
+            <textarea type="text" placeholder="Description" id="taskinputbox"></textarea>
+          </div>
+          <div class="subbutn">
+            <button class="subbtn" onclick="submitdata()" type="submit">
+              Submit
+            </button>
+          </div>
+
+        </div>
+
           <div class="clock-cont">
             <div class="clock">
               <span id="hrs">00</span>
@@ -179,12 +174,13 @@
 
         </div>
         <div class="tasks-cont">
-          <div id="task-details" style="display: none;">
-            <h2 style="color: black;">Task</h2>
-          </div>
           <div id="task-dashboard">
             <!-- Tasks will be dynamically inserted here -->
           </div>
+          <div id="task-details" style="display: none;">
+            <h2 style="color: black;">Task</h2>
+          </div>
+        
         </div>
        
       </div>
