@@ -11,6 +11,7 @@
 
 <body>
   <div class="main">
+    <div id="overlay"></div>
     <div class="leftmenu" style="font-size: 10px">
       <div class="logoholder"></div>
       <div class="profile">
@@ -26,11 +27,6 @@
           </div>
         </div>
       </div>
-      <button class="btn">
-        <div class="leftprofile">
-          <i class="fa-regular fa-user fa-2xl" style="color: #b197fc"></i>Profile
-        </div>
-      </button>
 
       <div class="pgsection">
         <div class="style"></div>
@@ -70,6 +66,12 @@
               <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #b197fc"></i>
             </div>
             <input class="sb" type="text" placeholder="Search" />
+          </div>
+          <div>
+            <button class="timerbtn" id="timerstart">
+              <i class="fa-solid fa-play fa-xl" style="color: #B197FC;"></i>
+              Timer
+            </button>
           </div>
         </div>
       </div>
@@ -164,6 +166,24 @@
               </main>
             </div>
         
+          </div>
+        </div>
+
+        <div class="container" id="timercont">
+          <div class="section-container">
+            <button id="focus" class="button btn-timer btn-focus">Focus</button>
+            <button id="shortbreak" class="button btn-shortbreak">Short Break</button>
+            <button id="longbreak" class="button btn-longbreak">Long Break</button>
+          </div>
+          <div class="time-btn-container">
+            <span id="time"></span>
+            <div class="btn-container">
+              <button id="btn-start" class="show">Start</button>
+              <button id="btn-pause" class="hide">Pause</button>
+              <button id="btn-reset" class="hide">
+                <i class="fa-solid fa-rotate-right"></i>
+              </button>
+            </div>
           </div>
         </div>
 
