@@ -16,15 +16,16 @@ body {
 
 .main {
   display: flex;
-  background-color: #0b1729;
+  background-color: #0B1729;
 }
 
 .mainicon {
   width: 100px;
   height: 100px;
 }
+
 .leftmenu {
-  background-color: #0b1729;
+  background-color: #0B1729;
   height: 100vh;
   padding-left: 10px;
   color: white;
@@ -34,20 +35,7 @@ body {
   width: 190px;
   overflow: hidden;
 }
-.mainmenu {
-  width: 96vw;
-  color: black;
-  min-height: 100vh;
-  padding: 20px;
-  background-color: white;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
-  z-index: 5;
-  margin-left: 196px; /* Leave space for the sidebar */
-  padding: 20px;
-  height: max-content;
 
-}
 .logoholder {
   height: 80px;
   width: 150px;
@@ -56,12 +44,14 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
 }
+
 .profile {
   display: flex;
   width: fit-content;
   gap: 5px;
   justify-content: space-between;
 }
+
 .info {
   display: grid;
   justify-self: center;
@@ -76,6 +66,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
 .leftprofile {
   display: flex;
   align-items: center;
@@ -83,18 +74,22 @@ body {
   gap: 15px;
   width: 100px;
 }
+
 .pgsection {
   height: 350px;
   margin-top: 100px;
 }
+
 .pgsec {
   width: 180px;
 }
+
 .leftmenulogout {
   display: flex;
   justify-content: space-evenly;
   width: 100px;
 }
+
 .style {
   border-top: 1px solid #b197fc;
   width: 90%;
@@ -102,7 +97,7 @@ body {
 }
 
 .btn {
-  background-color: #0b1729;
+  background-color: transparent;
   border: none;
   width: 100%;
   color: rgb(223, 222, 222);
@@ -114,9 +109,11 @@ body {
   align-items: center;
   display: flex;
 }
+
 .btn:hover {
   background-color: #664e78;
 }
+
 .btn2 {
   background-color: #b197fc;
   border: none;
@@ -127,18 +124,37 @@ body {
   padding-right: 10px;
   border-radius: 10px;
 }
+
+.mainmenu {
+  color: black;
+  background-color: white;
+  min-height: 100vh;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  z-index: 5;
+  padding: 20px;
+  height: max-content;
+}
+
+.rightsec {
+  margin-left: 196px;
+  width: 95vw;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-content: center;
+  width: 100%;
+  padding: 30px;
 }
+
 .sbct {
   align-content: center;
   justify-content: space-between;
   display: flex;
   width: 410px;
   flex-wrap: wrap;
-  float: right;
   width: 100%;
   align-items: flex-end;
 }
@@ -164,6 +180,7 @@ body {
   width: 250px;
   padding-left: 10px;
 }
+
 .ct {
   align-content: center;
   padding-left: 10px;
@@ -176,15 +193,17 @@ body {
 /* DASHBOARD*********************************************************************** */
 
 .analytics {
-  margin-top: 50px;
+  margin-top: 5px;
   display: flex;
   justify-content: space-between;
+
 }
+
 .dropdown-content {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -201,29 +220,43 @@ body {
 
 
 .div1 {
-  background-color: rgb(127, 50, 243);
   height: 250px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   width: 340px;
-  border-radius: 20px;
-  justify-content: space-evenly;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   align-content: space-between;
-  color: white;
+  color: black;
+  background-color: rgb(96, 79, 122);
+  background-image: linear-gradient(to bottom, rgba(239, 218, 218, 0.3), rgba(215, 63, 63, 0.6));
   box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
+  padding-top: 5px;
+  border: 1px solid;
 }
+
+.div1header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  width: 100%;
+  padding: 10px;
+
+}
+
 .minitabs {
   width: 100%;
   height: max-content;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
-/* Hover effect */
+
 .minitab:hover {
-  background-color: #e0f7fa;
+  background-color: #a2ade7;
   border-radius: 10px;
   color: black;
   transition: background-color 0.3s ease;
@@ -231,8 +264,9 @@ body {
 
 .minitab {
   border-radius: 20px;
-  background-color: #664e78;
-  width: 32%;
+  background-color: rgb(183, 159, 218);
+  background-image: linear-gradient(to bottom, rgba(192, 132, 132, 0.3), rgba(185, 125, 125, 0.6));
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -241,21 +275,57 @@ body {
   padding-right: 7px;
   padding-top: 8px;
   align-items: center;
+  bottom: -10px;
+  color: rgb(0, 0, 0);
+  border: 2px dotted black;
 }
+
+#minit1 {
+  position: absolute;
+  bottom: -35px;
+  left: 8px;
+}
+
+#minit1:hover {
+  bottom: -20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#minit2:hover {
+  bottom: -20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#minit3:hover {
+  bottom: -20px;
+  transition: all 0.3s ease-in-out;
+}
+
+#minit2 {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+#minit3 {
+  position: absolute;
+  bottom: -35px;
+  right: 8px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.div1 .header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
+
 .div1 .tasks {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 100px;
 }
 
 .status {
@@ -265,16 +335,19 @@ body {
   align-content: center;
   height: 80px;
 }
+
 .icons {
   display: flex;
   justify-content: center;
 }
+
 .assigned {
   float: right;
   width: 30%;
   gap: 10px;
   border-radius: 30px;
 }
+
 #usersList {
   justify-items: center;
   align-items: center;
@@ -286,6 +359,7 @@ body {
   justify-content: space-between;
   border-radius: 30px;
 }
+
 .user-item {
   height: 40px;
   align-items: center;
@@ -294,7 +368,6 @@ body {
 }
 
 #headinput {
-  background-color: #c2b5e9;
   color: black;
   height: 40px;
   overflow-y: hidden;
@@ -307,14 +380,16 @@ body {
   align-content: center;
   border: 1px solid black;
 }
+
 #Xmark {
   margin-left: 100%;
   line-height: 25px;
   width: 25px;
   align-content: center;
+  color: white;
 }
 
-.tasks-cont{
+.tasks-cont {
   border: 2px solid;
   height: max-content;
   text-align: center;
@@ -327,7 +402,6 @@ body {
 }
 
 #taskinputbox {
-  background-color: #c2b5e9;
   color: black;
   height: 120px;
   width: 100%;
@@ -343,7 +417,8 @@ body {
 }
 
 #taskinput {
-  background-color: #a88ac0;
+  background-color: rgb(96, 79, 122);
+  background-image: linear-gradient(to bottom, rgba(239, 218, 218, 0.3), rgba(215, 63, 63, 0.6));
   height: 250px;
   flex-wrap: wrap;
   display: none;
@@ -353,7 +428,7 @@ body {
   align-content: space-between;
   padding-left: 30px;
   padding-right: 30px;
-  border-radius: 30px;
+  border-radius: 10px;
   padding-top: 10px;
   border: 2px solid black;
 }
@@ -363,7 +438,9 @@ body {
   border: 2px solid;
   padding: 5px;
   width: 50%;
+  transition: all 500ms ease-in-out;
 }
+
 .subbutn {
   display: flex;
   justify-content: center;
@@ -372,16 +449,15 @@ body {
 }
 
 .subbtn:hover {
-  background-color: #604871;
+  background-color: #ffffff;
+  cursor: pointer;
 }
 
 /* tasks boxes ***************************************************** */
 
-#task-dashboard{
+#task-dashboard {
   width: 280px;
   padding: 20px;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
 }
 
 .task-box {
@@ -390,7 +466,6 @@ body {
   height: max-content;
   width: 200px;
   text-align: center;
-  /* background-color: #d0acac; */
   justify-content: space-between;
   display: flex;
   align-items: center;
@@ -399,7 +474,7 @@ body {
   border-radius: 2px;
 }
 
-.task-desc{
+.task-desc {
   width: 100px;
   display: flex;
   flex-wrap: wrap;
@@ -417,30 +492,32 @@ body {
   max-height: fit-content;
 }
 
-.delete-btn{
+.delete-btn {
   padding: 5px;
 }
 
 
-.functionalapps{
-  min-height: 430px;
+.functionalapps {
+  min-height: 365px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
+
 /* clock *********************************************** */
 
-.clock-cont{
-  width: 350px;
-  height: 100px;
+.clock-cont {
+  width: 220px;
+  height: 70px;
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
 }
 
-.clock{
+.clock {
   width: 100%;
   height: 100%;
-  background: rgba(235,0,255,0.11);
+  background: rgba(235, 0, 255, 0.11);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -448,20 +525,21 @@ body {
   backdrop-filter: blur;
 }
 
-.clock-cont::before{
+.clock-cont::before {
   content: ' ';
-  width:40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   background: #f41b75;
   border-radius: 5px;
   position: absolute;
   left: -10px;
   top: -10px;
 }
-.clock-cont::after{
+
+.clock-cont::after {
   content: '';
-  width:40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   background: #419aff;
   border-radius: 30px;
   position: absolute;
@@ -469,16 +547,16 @@ body {
   right: -10px;
 }
 
-.clock span{
+.clock span {
   font-size: 10px;
-  width: 60px;
+  width: 30px;
   display: inline-block;
   text-align: center;
   position: relative;
-  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
-.clock span::after{
+.clock span::after {
   position: absolute;
   font-size: 5px;
   bottom: -20px;
@@ -486,33 +564,27 @@ body {
   transform: translateX(-50%);
 }
 
-#hrs::after{
+#hrs::after {
   content: 'HOURS';
 }
-#mins::after{
+
+#mins::after {
   content: 'MINS';
 }
-#secs::after{
+
+#secs::after {
   content: 'SEC';
 }
 
-
-
 /* Weather /////////////////////////////// */
 
-
-/* body {
-  font-family: 'montserrat', sans-serif;
-  background-image: url('bg.jpg');
-  background-size: cover;
-  background-position: top center;
-} */
 
 .app-wrap {
   display: flex;
   flex-direction: column;
   color: black;
-  background-image: linear-gradient(to bottom, rgba(225, 42, 42, 0.3), rgba(100, 22, 22, 0.3));
+  background-color: rgb(136, 115, 169);
+  background-image: linear-gradient(to bottom, rgba(235, 169, 169, 0.3), rgba(80, 7, 7, 0.6));
 }
 
 header {
@@ -541,7 +613,7 @@ header input:focus {
 }
 
 main {
-  flex: 1 1 100%;
+  flex: 1 2 100%;
   padding: 15px 15px 20px;
   display: flex;
   flex-direction: column;
@@ -562,7 +634,7 @@ main {
 .current .temp {
   font-size: 32px;
   font-weight: 900;
-  margin: 30px 0px;
+  margin: 15px 0px;
 }
 
 .current .temp span {
