@@ -56,6 +56,7 @@ body {
   display: grid;
   justify-self: center;
   align-items: center;
+  font-size: large;
 }
 
 .leftphoto {
@@ -196,7 +197,6 @@ body {
   margin-top: 5px;
   display: flex;
   justify-content: space-between;
-
 }
 
 .dropdown-content {
@@ -231,9 +231,9 @@ body {
   padding-right: 10px;
   align-content: space-between;
   color: black;
-  background-color: rgb(96, 79, 122);
-  background-image: linear-gradient(to bottom, rgba(239, 218, 218, 0.3), rgba(215, 63, 63, 0.6));
   box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
+  background-color: #403858;
+  background-image: linear-gradient(to bottom, rgb(196 216 255 / 50%), rgba(45, 48, 84, 0.6));
   padding-top: 5px;
   border: 1px solid;
 }
@@ -264,8 +264,8 @@ body {
 
 .minitab {
   border-radius: 20px;
-  background-color: rgb(183, 159, 218);
-  background-image: linear-gradient(to bottom, rgba(192, 132, 132, 0.3), rgba(185, 125, 125, 0.6));
+  background-color: #c3bcd6;
+  background-image: linear-gradient(to bottom, rgb(255 255 255 / 30%), rgb(93 104 242 / 60%));
   width: 30%;
   display: flex;
   flex-direction: column;
@@ -382,28 +382,16 @@ body {
 }
 
 #Xmark {
-  margin-left: 100%;
   line-height: 25px;
   width: 25px;
   align-content: center;
   color: white;
 }
 
-.tasks-cont {
-  border: 2px solid;
-  height: max-content;
-  text-align: center;
-  display: none;
-  justify-content: space-between;
-  padding-left: 30px;
-  padding-right: 130px;
-  border-radius: 10px;
-  margin-top: 50px;
-}
+/* //Task Cont */
 
 #taskinputbox {
   color: black;
-  height: 120px;
   width: 100%;
   flex-wrap: wrap;
   overflow-y: hidden;
@@ -417,19 +405,17 @@ body {
 }
 
 #taskinput {
-  background-color: rgb(96, 79, 122);
-  background-image: linear-gradient(to bottom, rgba(239, 218, 218, 0.3), rgba(215, 63, 63, 0.6));
-  height: 250px;
-  flex-wrap: wrap;
+  height: max-content;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: none;
+  width: 100%;
+  flex-wrap: wrap;
   transition: all 400ms ease-in-out;
   font-size: 30px;
   justify-content: space-between;
   align-content: space-between;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 10px;
-  padding-top: 10px;
   border: 2px solid black;
 }
 
@@ -437,7 +423,6 @@ body {
   background: transparent;
   border: 2px solid;
   padding: 5px;
-  width: 50%;
   transition: all 500ms ease-in-out;
 }
 
@@ -445,7 +430,6 @@ body {
   display: flex;
   justify-content: center;
   padding: 5px;
-  width: 100%;
 }
 
 .subbtn:hover {
@@ -455,23 +439,29 @@ body {
 
 /* tasks boxes ***************************************************** */
 
+.tasks-cont {
+  height: max-content;
+  display: none;
+  margin-top: 30px;
+  justify-items: center;
+}
+
 #task-dashboard {
-  width: 280px;
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
 }
 
 .task-box {
   padding: 10px;
   margin: 10px;
+  text-align: left;
   height: max-content;
-  width: 200px;
-  text-align: center;
+  width: 99%;
   justify-content: space-between;
   display: flex;
   align-items: center;
   border: 1px solid #000000;
   cursor: pointer;
-  border-radius: 2px;
 }
 
 .task-desc {
@@ -512,12 +502,13 @@ body {
   height: 70px;
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 1.5);
+  border-radius: 10px;
 }
 
 .clock {
   width: 100%;
   height: 100%;
-  background: rgba(235, 0, 255, 0.11);
+  background: rgba(0, 110, 255, 0.251);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -548,7 +539,7 @@ body {
 }
 
 .clock span {
-  font-size: 10px;
+  font-size: 24px;
   width: 30px;
   display: inline-block;
   text-align: center;
@@ -558,8 +549,8 @@ body {
 
 .clock span::after {
   position: absolute;
-  font-size: 5px;
-  bottom: -20px;
+  font-size: 10px;
+  bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -583,8 +574,8 @@ body {
   display: flex;
   flex-direction: column;
   color: black;
-  background-color: rgb(136, 115, 169);
-  background-image: linear-gradient(to bottom, rgba(235, 169, 169, 0.3), rgba(80, 7, 7, 0.6));
+  background-color: #9576eb;
+  background-image: linear-gradient(to bottom, rgb(255 255 255 / 30%), rgb(93 104 242 / 60%));
 }
 
 header {

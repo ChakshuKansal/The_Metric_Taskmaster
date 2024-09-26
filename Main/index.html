@@ -18,11 +18,11 @@
         <div class="info">
           <div>
             <h3>
-              <span style="font-size: 5px; font: 100" id="usernameDisplay"></span>
+              <span style="font-size: 15px; font: 100" id="usernameDisplay"></span>
             </h3>
           </div>
           <div>
-            <p style="font-size: 1px; font: italic">Premium Account</p>
+            <p style="font-size: 10px; font: italic">Premium Account</p>
           </div>
         </div>
       </div>
@@ -71,9 +71,6 @@
             </div>
             <input class="sb" type="text" placeholder="Search" />
           </div>
-          <button class="btn2" id="createtask">
-            <div class="ct">+ Create Task</div>
-          </button>
         </div>
       </div>
 
@@ -87,14 +84,12 @@
               <div class="div1header">
                 <div>Overall Information</div>
                 <div>
-                  <button onclick="shareAnalytics()"
-                    style="background: transparent; border: none; color:rgb(0, 0, 0) ;">
+                  <button onclick="shareAnalytics()" style="background: transparent; border: none; color:rgb(0, 0, 0) ;">
                     <i class="fa-solid fa-share-nodes"></i>
                   </button>
                 </div>
                 <div>
-                  <button onclick="toggleDropdown()"
-                    style="background: transparent; border: none; color: rgb(0, 0, 0);">
+                  <button onclick="toggleDropdown()" style="background: transparent; border: none; color: rgb(0, 0, 0);">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
                   </button>
                   <div id="dropdown" class="dropdown-content" style="display: none;">
@@ -103,7 +98,7 @@
                   </div>
                 </div>
               </div>
-
+        
               <div class="tasks">
                 <div><span id="tasks-done" style="font-size: 40px">0</span> tasks done</div>
               </div>
@@ -138,27 +133,9 @@
               </div>
             </div>
           </div>
-
-          <div id="taskinput">
-
-            <div id="Xmark">
-              <i class="fa-solid fa-xmark fa-sm" style="color: #d5d3d6"></i>
-            </div>
-            <div>
-              <textarea type="text" placeholder="Your Task" id="headinput"></textarea>
-            </div>
-            <div>
-              <textarea type="text" placeholder="Description" id="taskinputbox"></textarea>
-            </div>
-            <div class="subbutn">
-              <button class="subbtn" onclick="submitdata()" type="submit">
-                Submit
-              </button>
-            </div>
-
-          </div>
+        
           <div class="functionalapps">
-
+        
             <div class="clock-cont">
               <div class="clock">
                 <span id="hrs">00</span>
@@ -167,9 +144,8 @@
                 <span>:</span>
                 <span id="secs">00</span>
               </div>
-
             </div>
-
+        
             <div class="app-wrap">
               <header>
                 <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
@@ -184,19 +160,41 @@
                   <div class="weather">Sunny</div>
                   <div class="hi-low">13°c / 16°c</div>
                 </div>
-
+        
               </main>
             </div>
-
+        
           </div>
         </div>
 
-        <div id="tasks-cont" class="tasks-cont">
-          <div id="task-dashboard">
-            <h1>Tasks</h1>
-            <!-- Tasks will be dynamically inserted here -->
+        <div style="margin-top: 20px; border-top: 2px solid #000000; padding-top: 30px;">
+          <div>
+            <button class="btn2" id="createtask">
+              <div class="ct">Create Task</div>
+            </button>
           </div>
-          <div id="task-details" style="display: none;">
+
+          <div id="taskinput">
+            <div>
+              <input type="text" placeholder="Add Task" id="headinput">
+            </div>
+            <div class="subbutn">
+              <button class="subbtn" onclick="submitdata()" type="submit">
+                Submit
+              </button>
+            </div>
+            <div id="Xmark">
+              <i class="fa-solid fa-xmark fa-sm" style="color: #000000"></i>
+            </div>
+          </div>
+          
+          <div id="tasks-cont" class="tasks-cont">
+            <div id="task-details" style="display: none;">
+            </div>
+            <div id="task-dashboard">
+              <h1>Tasks</h1>
+              <!-- Tasks will be dynamically inserted here -->
+            </div>
           </div>
         </div>
 

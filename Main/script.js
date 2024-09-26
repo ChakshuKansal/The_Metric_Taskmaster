@@ -1,4 +1,9 @@
 // JavaScript for Main Page
+let createtask = document.getElementById("createtask");
+let taskinput = document.getElementById("taskinput");
+let xmark = document.getElementById("Xmark");
+
+
 function displayUsername() {
   const currentUser = localStorage.getItem("currentUser");
   if (currentUser) {
@@ -6,13 +11,15 @@ function displayUsername() {
   }
 }
 
-// Call this function when the page loads
-window.onload = displayUsername;
-window.onload = updateAnalytics;
+window.addEventListener('load',()=>{
+  displayUsername();
+  updateAnalytics();
+  loadLastSearchedCity(); // Show weather for last searched city on page load
+  displayTasks();
+})
 
 function logout() {
   localStorage.removeItem("currentUser");
-  // Redirect to the login page
   window.location.href = "../Login/login.html";
 }
 
@@ -20,22 +27,15 @@ function openCalender() {
   window.location.href = "../Calender/Calender.html";
 }
 
-let createtask = document.getElementById("createtask");
-let taskinput = document.getElementById("taskinput");
-let xmark = document.getElementById("Xmark");
-
 // Function to display tasks on the dashboard
 function displayTasks() {
-  // Get the logged-in user
   const currentUser = localStorage.getItem("currentUser");
-  // Check if the user is logged in
   if (!currentUser) {
     alert("No user is logged in.");
     return;
   }
-  // Get the user's data from localStorage (including password, email, and tasks)
+
   const userData = JSON.parse(localStorage.getItem(currentUser));
-  // Check if user has any tasks, if not, initialize an empty array
   let tasks = userData.tasks || [];
   const dashboard = document.getElementById("task-dashboard");
   const taskContainer = document.getElementById("tasks-cont");
@@ -46,7 +46,7 @@ function displayTasks() {
     taskContainer.style.display = "none";
     return;
   } else {
-    taskContainer.style.display = "flex";
+    taskContainer.style.display = "grid";
   }
 
   tasks.forEach((task, index) => {
@@ -82,21 +82,19 @@ function deleteTask(taskIndex) {
   const currentUser = localStorage.getItem("currentUser");
 
   if (!currentUser) {
-    alert("No user is logged in.");
-    return;
+    alert("No user is logged in.");return;
   }
 
   const userData = JSON.parse(localStorage.getItem(currentUser));
   let tasks = userData.tasks || [];
   tasks.splice(taskIndex, 1); // Remove the task at the given index
   userData.tasks = tasks; // Update the userData object
-  localStorage.setItem(currentUser, JSON.stringify(userData)); // Save the updated user data
-
+  localStorage.setItem(currentUser, JSON.stringify(userData));
   displayTasks();
   updateAnalytics();
 }
 
-//Function to mark a task as completed**
+//Function to mark a task as completed
 function markTaskAsCompleted(taskIndex) {
   const currentUser = localStorage.getItem("currentUser");
 
@@ -111,48 +109,34 @@ function markTaskAsCompleted(taskIndex) {
   localStorage.setItem(currentUser, JSON.stringify(userData));
 
   displayTasks();
-
-  // Update analytics after task completion
   updateAnalytics();
 }
 
 function submitdata() {
   const headinput = document.getElementById("headinput").value;
-  const desc = document.getElementById("taskinputbox").value;
 
-  if (headinput === "" || desc === "") {
-    alert("Please fill in both fields.");
+  if (headinput === "") {
+    alert("Please fill task.");
     return;
   }
-
-  // Get the logged-in user
   const currentUser = localStorage.getItem("currentUser");
-
-  // Retrieve the user object (password, email, tasks)
   let userData = JSON.parse(localStorage.getItem(currentUser));
-
-  // If the user object doesn't have tasks, initialize an empty array
   if (!userData.tasks) {
     userData.tasks = [];
   }
-
   const newTask = {
     id: userData.tasks.length + 1,
     title: headinput,
-    description: desc,
   };
-
   userData.tasks.push(newTask);
   localStorage.setItem(currentUser, JSON.stringify(userData));
   document.getElementById("headinput").value = "";
-  document.getElementById("taskinputbox").value = "";
 
-  // Refresh the task dashboard
   displayTasks();
   updateAnalytics();
 }
 
-displayTasks();
+
 
 // Function to get tasks from localStorage
 function getTasks() {
@@ -160,26 +144,6 @@ function getTasks() {
   return tasks ? JSON.parse(tasks) : [];
 }
 
-// Function to open a task and show details
-function openTask(taskId) {
-  const currentUser = localStorage.getItem("currentUser");
-  // Get the user's data from localStorage
-  const userData = JSON.parse(localStorage.getItem(currentUser));
-  // Get the task list from user data
-  const tasks = userData.tasks || [];
-  const task = tasks.find((t) => t.id === taskId);
-  if (task) {
-    const taskDetails = document.getElementById("task-details");
-    taskDetails.style.display = "block";
-
-    taskDetails.innerHTML = `
-      <br>
-      <h3>${formatDescription(task.title)}</h3>
-      <div class="task-desc">
-        ${formatDescription(task.description)}
-      </div>`;
-  }
-}
 // Function to format the description into multiple lines
 function formatDescription(description) {
   const lineLength = 18; // Number of characters per line
@@ -193,10 +157,12 @@ function formatDescription(description) {
 }
 
 createtask.addEventListener("click", () => {
-  taskinput.style.display = "grid";
+  taskinput.style.display = "flex";
+  createtask.style.display='none';
 });
 
 xmark.addEventListener("click", () => {
+  createtask.style.display='block';
   taskinput.style.display = "none";
 });
 
@@ -315,10 +281,6 @@ const api = {
 
 const searchbox = document.querySelector(".search-box");
 searchbox.addEventListener("keypress", setQuery);
-
-window.addEventListener("load", () => {
-  loadLastSearchedCity(); // Show weather for last searched city on page load
-});
 
 function setQuery(evt) {
   if (evt.keyCode == 13) {
