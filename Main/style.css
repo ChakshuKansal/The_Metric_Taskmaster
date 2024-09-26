@@ -471,6 +471,16 @@ body {
   cursor: pointer;
 }
 
+.task-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+
 .task-desc {
   width: 100px;
   display: flex;
@@ -489,10 +499,21 @@ body {
   max-height: fit-content;
 }
 
-.delete-btn {
-  padding: 5px;
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
 }
 
+.delete-btn, .edit-btn {
+  background-color: #b197fc;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
 
 .functionalapps {
   min-height: 365px;

@@ -2,9 +2,9 @@
 let createtask = document.getElementById("createtask");
 let taskinput = document.getElementById("taskinput");
 let xmark = document.getElementById("Xmark");
-let timerstart=document.getElementById("timerstart");
-let timercont=document.getElementById("timercont");
-let overlay=document.getElementById("overlay")
+let timerstart = document.getElementById("timerstart");
+let timercont = document.getElementById("timercont");
+let overlay = document.getElementById("overlay");
 
 function displayUsername() {
   const currentUser = localStorage.getItem("currentUser");
@@ -13,24 +13,22 @@ function displayUsername() {
   }
 }
 
-
-window.addEventListener('load',()=>{
+window.addEventListener("load", () => {
   displayUsername();
   updateAnalytics();
   loadLastSearchedCity(); // Show weather for last searched city on page load
   displayTasks();
-})
+});
 
-timerstart.addEventListener('click',()=>{
-  timercont.style.display="block";
-  overlay.style.display="block";
-})
+timerstart.addEventListener("click", () => {
+  timercont.style.display = "block";
+  overlay.style.display = "block";
+});
 
-overlay.addEventListener("click",()=>{
-  timercont.style.display="none";
-  overlay.style.display="none";
-
-})
+overlay.addEventListener("click", () => {
+  timercont.style.display = "none";
+  overlay.style.display = "none";
+});
 
 function logout() {
   localStorage.removeItem("currentUser");
@@ -74,29 +72,59 @@ function displayTasks() {
     const taskLabel = document.createElement("span");
     taskLabel.innerHTML = `<p>${formatDescription(task.title)}</p>`;
     taskLabel.style.textDecoration = task.completed ? "line-through" : "none"; //Strike-through if completed
+    const actionButtons = document.createElement("div");
+    actionButtons.classList.add("action-buttons");
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-btn");
-    deleteButton.innerHTML =
-      '<i class="fa-solid fa-trash fa-xl" style="color: #74C0FC;"></i>';
+    deleteButton.innerHTML = '<i class="fa-solid fa-trash fa-lg"></i>';
     deleteButton.classList.add("delete-btn");
     deleteButton.addEventListener("click", (event) => {
       event.stopPropagation(); // Prevent triggering other events (like opening the task)
       deleteTask(index);
     });
+    const editButton = document.createElement("button");
+    editButton.classList.add("edit-btn");
+    editButton.innerHTML = '<i class="fa-solid fa-pen fa-lg"></i>';
+    editButton.addEventListener("click", (event) => {
+      event.stopPropagation();
+      editTask(index, task.title);
+    });
+    actionButtons.appendChild(editButton);
+    actionButtons.appendChild(deleteButton);
 
     taskBox.appendChild(radioButton);
     taskBox.appendChild(taskLabel);
-    taskBox.appendChild(deleteButton);
+    taskBox.appendChild(actionButtons);
     taskBox.addEventListener("click", () => openTask(task.id));
     dashboard.appendChild(taskBox);
   });
+}
+
+function editTask(taskIndex, oldTitle) {
+  const newTitle = prompt("Edit your task", oldTitle); // You can also create a better UI for this
+  if (newTitle === null || newTitle.trim() === "") {
+    return; // Don't save if the user cancels or enters nothing
+  }
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
+    alert("No user is logged in.");
+    return;
+  }
+  const userData = JSON.parse(localStorage.getItem(currentUser));
+  let tasks = userData.tasks || [];
+  tasks[taskIndex].title = newTitle; // Update the task's title
+
+  localStorage.setItem(currentUser, JSON.stringify(userData)); // Save the updated tasks
+  displayTasks(); // Refresh the task list display
+  updateAnalytics(); // Update the analytics if necessary
 }
 
 function deleteTask(taskIndex) {
   const currentUser = localStorage.getItem("currentUser");
 
   if (!currentUser) {
-    alert("No user is logged in.");return;
+    alert("No user is logged in.");
+    return;
   }
 
   const userData = JSON.parse(localStorage.getItem(currentUser));
@@ -150,8 +178,6 @@ function submitdata() {
   updateAnalytics();
 }
 
-
-
 // Function to get tasks from localStorage
 function getTasks() {
   const tasks = localStorage.getItem("tasks");
@@ -172,11 +198,11 @@ function formatDescription(description) {
 
 createtask.addEventListener("click", () => {
   taskinput.style.display = "flex";
-  createtask.style.display='none';
+  createtask.style.display = "none";
 });
 
 xmark.addEventListener("click", () => {
-  createtask.style.display='block';
+  createtask.style.display = "block";
   taskinput.style.display = "none";
 });
 
@@ -399,7 +425,6 @@ function dateBuilder(d) {
 
   return `${day} ${date} ${month} ${year}`;
 }
-
 
 // ///////////////////////Timer
 

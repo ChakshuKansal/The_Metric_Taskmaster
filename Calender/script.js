@@ -422,16 +422,26 @@ eventsContainer.addEventListener("click", (e) => {
 
 //function to save events in local storage
 function saveEvents() {
-  localStorage.setItem("events", JSON.stringify(eventsArr));
-}
-
-//function to get events from local storage
-function getEvents() {
-  //check if events are already saved in local storage then return event else nothing
-  if (localStorage.getItem("events") === null) {
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
+    alert("No user is logged in.");
     return;
   }
-  eventsArr.push(...JSON.parse(localStorage.getItem("events")));
+  let userData = JSON.parse(localStorage.getItem(currentUser)) || {};
+  userData.events = eventsArr;
+  localStorage.setItem(currentUser, JSON.stringify(userData));
+}
+//function to get events from local storage
+function getEvents() {
+  const currentUser = localStorage.getItem("currentUser");
+  if (!currentUser) {
+    alert("No user is logged in.");
+    return;
+  }
+  let userData = JSON.parse(localStorage.getItem(currentUser)) || {};
+  if (userData.events) {
+    eventsArr.push(...userData.events);
+  }
 }
 
 function convertTime(time) {
