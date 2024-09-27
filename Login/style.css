@@ -56,7 +56,6 @@
   justify-items: center;
   width: 50%;
   background-color: rgb(255, 0, 0);
-  /* position: absolute; */
   height: 100%;
   align-content: center;
   margin-left: 50%;
@@ -140,4 +139,40 @@
 
 #cont1 {
   display: none;
+}
+
+@media(max-width: 874px) {
+  .container {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 87%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    box-shadow: 5px 15px 40px;
+  }
+  .SI,.SU{
+    font-size: 12px;
+  }
+  
+}
+
+@media (max-width:750px){
+  .cont{
+    font-size: smaller;
+  }
+  .SI,.SU{
+    font-size: 10px;
+  }
+}
+
+@media (max-width:580px){
+  .cont{
+    font-size: 12px;
+  }
+  .SI,.SU{
+    font-size: 10px;
+  }
 }

@@ -125,6 +125,23 @@ body {
   align-items: center;
   display: flex;
 }
+.calbtn {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: rgb(223, 222, 222);
+  cursor: pointer;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+}
+
+#mobilecalbtn{
+  display: none;
+}
 
 .rightsec {
   margin-left: 196px;
@@ -215,7 +232,7 @@ body {
 
 
 /* Adjustments for smaller screens */
-@media (max-width: 821px) {
+@media (max-width: 842px) {
   .header {
     flex-direction: column;
   }
@@ -249,6 +266,13 @@ body {
   .usernamedis {
     font-size: 11px;
     width: 50%;
+  }
+  #mobilecalbtn{
+    display: block;
+  }
+
+  .calbtn{
+    display: none;
   }
 
   .leftmenu {
@@ -320,6 +344,7 @@ body {
 .analytics {
   margin-top: 5px;
   width: 100%;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -572,7 +597,15 @@ body {
   cursor: pointer;
 }
 
-@media(max-width:627px) {
+.functionalapps {
+  min-height: 365px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media(max-width:640px) {
   .analytics {
     width: 100%;
     justify-content: center;
@@ -580,14 +613,17 @@ body {
 
   .div1 {
     width: 90%;
-
   }
 
   .div1header {
     min-width: 300px;
     width: 80%;
     font-size: 18px;
+  }
 
+  .functionalapps{
+    flex-direction: row;
+    width: 90%;
   }
 
   .minidiv1 {
@@ -686,14 +722,6 @@ body {
     width: 100%;
   }
 
-}
-
-.functionalapps {
-  min-height: 365px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
 
 /* clock *********************************************** */
@@ -940,4 +968,20 @@ button {
 
 .show {
   display: block;
+}
+
+
+@media (max-width:570px){
+  .functionalapps{
+    display: grid;
+    justify-content: center;
+  }
+
+  .app-wrap{
+    width: 70vw;
+  }
+
+  .clock-cont{
+    display: none;
+  }
 }
