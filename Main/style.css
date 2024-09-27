@@ -10,13 +10,16 @@
 }
 
 body {
-  font-family: myfont;
+  font-family: myfont, sans-serif;
   overflow-x: hidden;
+  width: 100%;
 }
 
 .main {
   display: flex;
+  flex-wrap: wrap;
   background-color: #0B1729;
+  width: 100%;
 }
 
 .mainicon {
@@ -30,7 +33,6 @@ body {
   padding-left: 10px;
   color: white;
   position: fixed;
-
   z-index: 7;
   width: 190px;
   overflow: hidden;
@@ -45,18 +47,22 @@ body {
   background-size: contain;
 }
 
+.usernamedis {
+  font-size: 13px;
+}
+
 .profile {
   display: flex;
-  width: fit-content;
-  gap: 5px;
   justify-content: space-between;
+  width: 180px;
 }
 
 .info {
-  display: grid;
+  display: flex;
+  width: 100%;
   justify-self: center;
   align-items: center;
-  font-size: large;
+  justify-content: space-between;
 }
 
 .leftphoto {
@@ -81,6 +87,15 @@ body {
   margin-top: 100px;
 }
 
+.pages {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .pgsec {
   width: 180px;
 }
@@ -88,7 +103,7 @@ body {
 .leftmenulogout {
   display: flex;
   justify-content: space-evenly;
-  width: 100px;
+  /* width: 100px; */
 }
 
 .style {
@@ -109,6 +124,11 @@ body {
   flex-wrap: wrap;
   align-items: center;
   display: flex;
+}
+
+.rightsec {
+  margin-left: 196px;
+  width: 95vw;
 }
 
 .btn:hover {
@@ -137,13 +157,9 @@ body {
   height: max-content;
 }
 
-.rightsec {
-  margin-left: 196px;
-  width: 95vw;
-}
-
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-content: center;
   width: 100%;
@@ -160,7 +176,7 @@ body {
   align-items: flex-end;
 }
 
-.timerbtn{
+.timerbtn {
   height: 50px;
   width: 100px;
   border-radius: 5px;
@@ -177,7 +193,6 @@ body {
   width: 250px;
   gap: 10px;
   border-radius: 10px;
-  float: right;
 }
 
 .sb {
@@ -198,11 +213,115 @@ body {
   font-size: 15px;
 }
 
+
+/* Adjustments for smaller screens */
+@media (max-width: 821px) {
+  .header {
+    flex-direction: column;
+  }
+
+  .sbct {
+    width: 100%;
+  }
+
+  .leftphoto {
+    background-image: url(profilephoto.avif);
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .logoholder {
+    height: 50px;
+    width: 80px;
+    background-image: url(phonelogo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .leftprofile div {
+    display: none;
+  }
+
+  .usernamedis {
+    font-size: 11px;
+    width: 50%;
+  }
+
+  .leftmenu {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+
+  .style {
+    display: none;
+  }
+
+  .pgsection {
+    height: 50px;
+    margin-top: 0px;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .accountinfo {
+    display: none;
+  }
+
+  .leftprofile {
+    flex-direction: column;
+    width: 60px;
+  }
+
+  .rightsec {
+    margin-left: 0px;
+    width: 100vw;
+  }
+
+  .profile {
+    width: 195px;
+    align-items: center;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .functionalapps {
+    height: 300px;
+  }
+
+  .mainmenu {
+    border-radius: 0px;
+    display: grid;
+  }
+}
+
+
 /* DASHBOARD*********************************************************************** */
 
 .analytics {
   margin-top: 5px;
+  width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -335,6 +454,15 @@ body {
   margin-bottom: 100px;
 }
 
+.minidiv1 {
+  width: 100%;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid black;
+  background-color: white;
+}
+
 .status {
   justify-content: center;
   display: flex;
@@ -444,6 +572,34 @@ body {
   cursor: pointer;
 }
 
+@media(max-width:627px) {
+  .analytics {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .div1 {
+    width: 90%;
+
+  }
+
+  .div1header {
+    min-width: 300px;
+    width: 80%;
+    font-size: 18px;
+
+  }
+
+  .minidiv1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 /* tasks boxes ***************************************************** */
 
 .tasks-cont {
@@ -505,7 +661,8 @@ body {
   gap: 5px;
 }
 
-.delete-btn, .edit-btn {
+.delete-btn,
+.edit-btn {
   background-color: #b197fc;
   border: none;
   color: rgb(0, 0, 0);
@@ -513,6 +670,22 @@ body {
   height: 35px;
   width: 35px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .task-box {
+    text-align: center;
+  }
+
+  .task-desc {
+    width: 100%;
+    text-align: center;
+  }
+
+  .task-details {
+    width: 100%;
+  }
+
 }
 
 .functionalapps {
@@ -684,9 +857,10 @@ main {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 100; 
+  z-index: 100;
   display: none;
 }
+
 .container {
   background-color: #1b1b1b;
   width: min(90%, 500px);
@@ -699,16 +873,19 @@ main {
   z-index: 101;
   border-radius: 0.5em;
 }
+
 button {
   border: none;
   outline: none;
   cursor: pointer;
 }
+
 .section-container {
   display: flex;
   gap: 1em;
   justify-content: center;
 }
+
 .button {
   padding: 10px;
   text-align: center;
@@ -716,26 +893,31 @@ button {
   background-color: #3e3f43;
   color: #a9a7a7;
 }
+
 .btn-focus {
   background-color: #cb202d;
   color: #ffffff;
 }
+
 .time-btn-container {
   display: flex;
   flex-direction: column;
   margin-top: 2em;
 }
+
 #time {
   text-align: center;
   color: #ffffff;
   font-size: 5em;
   font-weight: 600;
 }
+
 .btn-container {
   display: flex;
   justify-content: center;
   gap: 2em;
 }
+
 #btn-start,
 #btn-pause {
   padding: 1em 2em;
@@ -743,6 +925,7 @@ button {
   cursor: pointer;
   background-color: #ffffff;
 }
+
 #btn-reset {
   background-color: transparent;
   border: none;
@@ -750,9 +933,11 @@ button {
   color: #ffffff;
   font-size: 2em;
 }
+
 .hide {
   display: none;
 }
+
 .show {
   display: block;
 }
