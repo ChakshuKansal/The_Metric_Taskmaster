@@ -513,7 +513,7 @@ body {
   justify-content: space-between;
 }
 
-@media(max-width:640px) {
+@media(max-width:660px) {
   .analytics {
     width: 100%;
     justify-content: center;
