@@ -57,16 +57,10 @@
     <div class="rightsec">
       <div class="header">
         <div class="sbct">
-          <div class="searchbox">
-            <div style="align-content: center">
-              <i class="fa-solid fa-magnifying-glass fa-lg" style="color: #b197fc"></i>
-            </div>
-            <input class="sb" type="text" placeholder="Search" />
-          </div>
           <div>
             <button onclick="openCalender()" class="timerbtn" id="mobilecalbtn">
-                <i class="fa-regular fa-calendar-days fa-2xl" style="color: #b197fc"></i>
-                Calender
+              <i class="fa-regular fa-calendar-days fa-2xl" style="color: #b197fc"></i>
+              Calender
             </button>
           </div>
           <div>
@@ -189,42 +183,40 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div style="margin-top: 20px; border-top: 2px solid #000000; padding-top: 30px;">
+      <div class="taskmenu">
+        <div>
+          <button class="btn2" id="createtask">
+            <div class="ct">Create Task</div>
+          </button>
+        </div>
+
+        <div id="taskinput">
           <div>
-            <button class="btn2" id="createtask">
-              <div class="ct">Create Task</div>
+            <input type="text" placeholder="Add Task" id="headinput">
+          </div>
+          <div class="subbutn">
+            <button class="subbtn" onclick="submitdata()" type="submit">
+              Submit
             </button>
           </div>
-
-          <div id="taskinput">
-            <div>
-              <input type="text" placeholder="Add Task" id="headinput">
-            </div>
-            <div class="subbutn">
-              <button class="subbtn" onclick="submitdata()" type="submit">
-                Submit
-              </button>
-            </div>
-            <div id="Xmark">
-              <i class="fa-solid fa-xmark fa-sm" style="color: #000000"></i>
-            </div>
-          </div>
-
-          <div id="tasks-cont" class="tasks-cont">
-            <div id="task-details" style="display: none;">
-            </div>
-            <div id="task-dashboard">
-              <h1>Tasks</h1>
-              <!-- Tasks will be dynamically inserted here -->
-            </div>
+          <div id="Xmark">
+            <i class="fa-solid fa-xmark fa-sm" style="color: #000000"></i>
           </div>
         </div>
 
+        <div id="tasks-cont" class="tasks-cont">
+          <div id="task-details" style="display: none;">
+          </div>
+          <div id="task-dashboard">
+            <h1>Tasks</h1>
+            <!-- Tasks will be dynamically inserted here -->
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
   <script src="script.js"></script>
 </body>
 

@@ -29,7 +29,7 @@ body {
 
 .leftmenu {
   background-color: #0B1729;
-  height: 100vh;
+  height: 100%;
   padding-left: 10px;
   color: white;
   position: fixed;
@@ -125,6 +125,7 @@ body {
   align-items: center;
   display: flex;
 }
+
 .calbtn {
   background-color: transparent;
   border: none;
@@ -139,12 +140,18 @@ body {
   display: flex;
 }
 
-#mobilecalbtn{
+#mobilecalbtn {
   display: none;
 }
 
 .rightsec {
   margin-left: 196px;
+  height: 100vh;
+  /* Viewport height to take up the full screen */
+  overflow-y: auto;
+  /* Allows vertical scrolling */
+  overflow-x: hidden;
+  /* Prevents horizontal scrolling */
   width: 95vw;
 }
 
@@ -166,12 +173,12 @@ body {
 .mainmenu {
   color: black;
   background-color: white;
-  min-height: 100vh;
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
   z-index: 5;
   padding: 20px;
-  height: max-content;
+  max-height: 100%;
+  /* Ensure the content fits within the parent */
 }
 
 .header {
@@ -230,112 +237,13 @@ body {
   font-size: 15px;
 }
 
-
-/* Adjustments for smaller screens */
-@media (max-width: 842px) {
-  .header {
-    flex-direction: column;
-  }
-
-  .sbct {
-    width: 100%;
-  }
-
-  .leftphoto {
-    background-image: url(profilephoto.avif);
-    height: 45px;
-    width: 45px;
-    border-radius: 50%;
-    background-position: center;
-    background-size: cover;
-  }
-
-  .logoholder {
-    height: 50px;
-    width: 80px;
-    background-image: url(phonelogo.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
-  .leftprofile div {
-    display: none;
-  }
-
-  .usernamedis {
-    font-size: 11px;
-    width: 50%;
-  }
-  #mobilecalbtn{
-    display: block;
-  }
-
-  .calbtn{
-    display: none;
-  }
-
-  .leftmenu {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 20px;
-  }
-
-  .style {
-    display: none;
-  }
-
-  .pgsection {
-    height: 50px;
-    margin-top: 0px;
-  }
-
-  .pages {
-    display: none;
-  }
-
-  .info {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-  }
-
-  .accountinfo {
-    display: none;
-  }
-
-  .leftprofile {
-    flex-direction: column;
-    width: 60px;
-  }
-
-  .rightsec {
-    margin-left: 0px;
-    width: 100vw;
-  }
-
-  .profile {
-    width: 195px;
-    align-items: center;
-  }
-
-  .btn {
-    width: auto;
-  }
-
-  .functionalapps {
-    height: 300px;
-  }
-
-  .mainmenu {
-    border-radius: 0px;
-    display: grid;
-  }
+.taskmenu {
+  margin-top: 20px;
+  border-top: 2px solid #000000;
+  padding: 30px;
+  height: fit-content;
+  background-color: rgb(255, 255, 255);
+  border-top-left-radius: 30px;
 }
 
 
@@ -621,7 +529,7 @@ body {
     font-size: 18px;
   }
 
-  .functionalapps{
+  .functionalapps {
     flex-direction: row;
     width: 90%;
   }
@@ -971,17 +879,171 @@ button {
 }
 
 
-@media (max-width:570px){
-  .functionalapps{
+/* Adjustments for smaller screens */
+@media (max-width: 842px) {
+  .header {
+    flex-direction: column;
+    margin-top: 70px;
+  }
+
+  .sbct {
+    width: 100%;
+  }
+
+  .leftphoto {
+    background-image: url(profilephoto.avif);
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .logoholder {
+    height: 50px;
+    width: 80px;
+    background-image: url(phonelogo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .leftprofile div {
+    display: none;
+  }
+
+  .usernamedis {
+    font-size: 11px;
+    width: 50%;
+  }
+
+  #mobilecalbtn {
+    display: block;
+  }
+
+  .calbtn {
+    display: none;
+  }
+
+  .leftmenu {
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .style {
+    display: none;
+  }
+
+  .pgsection {
+    height: 50px;
+    margin-top: 0px;
+    display: none;
+  }
+
+  .pages {
+    display: none;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .accountinfo {
+    display: none;
+  }
+
+  .leftprofile {
+    flex-direction: column;
+    width: 60px;
+  }
+
+  .rightsec {
+    margin-left: 0px;
+    width: 100vw;
+  }
+
+  .profile {
+    width: 195px;
+    align-items: center;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  .functionalapps {
+    height: 300px;
+  }
+
+  .mainmenu {
+    border-radius: 0px;
+    display: grid;
+  }
+
+  .taskmenu {
+    border-radius: 0px;
+  }
+}
+
+
+@media (max-width:570px) {
+  .functionalapps {
     display: grid;
     justify-content: center;
   }
 
-  .app-wrap{
+  .app-wrap {
     width: 70vw;
   }
 
-  .clock-cont{
+  .clock-cont {
     display: none;
+  }
+}
+
+
+@media (max-width:520px) {
+  .searchbox {
+    display: none;
+  }
+}
+
+@media (max-width:460px) {
+  .div1 {
+    font-size: 14px;
+  }
+}
+
+@media(max-width:398px) {
+  .minitabs {
+    font-size: 12px;
+    font: 300;
+  }
+}
+
+@media (max-width:420px) {
+  .div1header {
+    min-width: 232px;
+  }
+}
+
+@media (max-width:360px) {
+  .mainmenu {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .functionalapps {
+    padding-bottom: 10px;
   }
 }
